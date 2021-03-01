@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-draw/v1.2.1/mapbox-gl-draw.css"
+    type="text/css">
+  <link rel="stylesheet" href="style.css">
+  <title>Challange!</title>
+</head>
+
+<body>
+
+  <div id='map'></div>
+  <div class="calculation-box">
+    <p>Draw a polygon using the draw tools in to right hand-side.</p>
+    <div id="calculated-area"></div>
+    <div style="margin-top: 10px;">
+      <label for="lineInput">Please enter a starting point for your line : </label><br>
+      <label for="X">X:</label>
+      <input type="text" style="width:25px;" id="xCoordinate">
+      <label for="Z">Z:</label>
+      <input type="text" style="width:25px;" id="zCoordinate">
+      <label for="length">Length in Kms:</label>
+      <input type="range" min="1" max="100" value="10" id="length">
+      <span id="kms"></span>
+      <button
+        style="padding: 5px 10px; margin-top: 10px; border: 0; background-color: lightgray; color: black; font-weight: bold;"
+        id="add">Add</button>
+    </div>
+    <div class="rangeslider">
+      <label for="sliderRange"></label>
+      <input type="range" min="0" max="1000" value="10" id="sliderRange">
+      <select id="lines">
+        <!-- <option value="line_1">Line 1</option>
+        <option value="line_2">Line 2</option> -->
+      </select>
+      <p>Length(km): <span id="output"></span></p>
+    </div>
+  </div>
+
+  <script src="https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js"></script>
+  <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-draw/v1.2.1/mapbox-gl-draw.js"></script>
+  <!-- <script src="https://cdn.jsdelivr.net/npm/@turf/turf@5/turf.min.js"></script> -->
+  <!-- <script src="dist/index_bundle.js"></script> -->
+  <script src="turf.min.js"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>
